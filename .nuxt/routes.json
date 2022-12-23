@@ -3,28 +3,24 @@
     "name": "about-us",
     "path": "/about-us",
     "component": "C:\\\\Github\\\\internship-fe\\\\pages\\\\about-us.vue",
-    "chunkName": "pages/about-us",
-    "_name": "_15c003a8"
+    "chunkName": "pages/about-us"
   },
   {
     "name": "contact-us",
     "path": "/contact-us",
     "component": "C:\\\\Github\\\\internship-fe\\\\pages\\\\contact-us.vue",
-    "chunkName": "pages/contact-us",
-    "_name": "_2fea2cb9"
+    "chunkName": "pages/contact-us"
   },
   {
     "name": "internship-program",
     "path": "/internship-program",
     "component": "C:\\\\Github\\\\internship-fe\\\\pages\\\\internship-program.vue",
-    "chunkName": "pages/internship-program",
-    "_name": "_6f572653"
+    "chunkName": "pages/internship-program"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Github\\\\internship-fe\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_690e5f18"
+    "chunkName": "pages/index"
   }
 ]
