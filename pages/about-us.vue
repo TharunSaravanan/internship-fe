@@ -11,10 +11,11 @@
       <h1>Hello!</h1>
       <h3 class="about-me-title">A Bit About Me</h3>
       <p>
-        I'm a paragraph. Click here to add your own text and edit me. ​Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Hi, I’m Tharun, a Junior at Andover High School in Kansas. When I was a sophomore, I was looking for an internship to get some experience in how the Computer Science industry works, but I was struggling to find one. That is why I founded [Website name] to try to ensure that students won’t have to face the issues I was facing in search of an internship. 
+      </p>
+      <br/>
+      <p>
+        With [website], my goal is to help high school students to find internship opportunities, explore various professions and build a community of knowledge. A little bit more about me: I love computer science, I love math, and I also love physics.
       </p>
       <div class="d-flex justify-content-center mt-4">
         <b-button class="icon facebook"
