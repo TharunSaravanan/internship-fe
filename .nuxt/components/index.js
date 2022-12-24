@@ -1,4 +1,4 @@
-export const SharedErrorModal = () => import('../..\\components\\shared\\ErrorModal.vue' /* webpackChunkName: "components/shared-error-modal" */).then(c => wrapFunctional(c.default || c))
+export { default as SharedErrorModal } from '../..\\components\\shared\\ErrorModal.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

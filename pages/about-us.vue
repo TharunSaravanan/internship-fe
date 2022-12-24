@@ -1,7 +1,7 @@
 <template>
   <div class="parent-container row d-flex justify-content-center">
     <div class="col-md-4 col-sm-12 img-container">
-      <img class="img-avatar" src="../assets/avatar1.png" />
+      <img class="img-avatar" src="../assets/tharun.jpg" />
       <div class="name-container">
         <span> Tharun</span>
         <span> Saravanan</span>
