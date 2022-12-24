@@ -25,7 +25,9 @@ export default class InternshipProgram extends BaseComponent {
   // beforeMount(): void {}
   // created(): void {}
   // beforeMount(): void {}
-  // mounted: void () {  }
+  private mounted(): void {
+    this.appStore.getInternships();
+   }
   // beforeUpdate(): void {}
   // updated(): void {}
   // beforeDestroy (): void {}
