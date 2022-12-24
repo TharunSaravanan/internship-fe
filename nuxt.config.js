@@ -35,7 +35,14 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/fontawesome'
   ],
+  fontawesome: {
+    icons:{
+     solid:true,
+     brands:true
+    }
+   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -56,7 +63,7 @@ export default {
     host: '0.0.0.0',
     timing: false
   },
-
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
