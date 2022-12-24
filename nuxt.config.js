@@ -24,7 +24,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/setup.ts', ssr: false },
+  { src: '~/plugins/axios-accessor.ts', mode: 'client' },
+  { src: '~/plugins/axios.ts', mode: 'client', ssr: false },],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
