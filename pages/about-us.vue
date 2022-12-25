@@ -15,7 +15,7 @@
       </p>
       <br/>
       <p>
-        With [website], my goal is to help high school students to find internship opportunities, explore various professions and build a community of knowledge. A little bit more about me: I love computer science, I love math, and I also love physics.
+        With <b>Student Internships </b>, my goal is to help high school students to find internship opportunities, explore various professions and build a community of knowledge. A little bit more about me: I love computer science, I love math, and I also love physics.
       </p>
       <div class="d-flex justify-content-center mt-4">
         <b-button class="icon facebook"
