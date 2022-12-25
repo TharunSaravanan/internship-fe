@@ -11,7 +11,7 @@
       <h1>Hello!</h1>
       <h3 class="about-me-title">A Bit About Me</h3>
       <p>
-        Hi, I’m Tharun, a Junior at Andover High School in Kansas. When I was a sophomore, I was looking for an internship to get some experience in how the Computer Science industry works, but I was struggling to find one. That is why I founded [Website name] to try to ensure that students won’t have to face the issues I was facing in search of an internship. 
+        Hi, I’m Tharun, a Junior at Andover High School in Kansas. When I was a sophomore, I was looking for an internship to get some experience in how the Computer Science industry works, but I was struggling to find one. That is why I founded <b>Student Internships </b> to try to ensure that students won’t have to face the issues I was facing in search of an internship. 
       </p>
       <br/>
       <p>
