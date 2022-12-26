@@ -1,13 +1,17 @@
 <template>
   <div id="app" class="default-layout">
-    <header  class="p-0">
-      <b-navbar toggleable="lg" >
-    <b-navbar-brand href="#"><h3>LOGO</h3></b-navbar-brand>
-<b-navbar-nav class="ml-auto">
-          <b-nav-item  @click="navigateTo('/')">Home</b-nav-item>
-          <b-nav-item  @click="navigateTo('/about-us')">About Us</b-nav-item>
-          <b-nav-item  @click="navigateTo('/contact-us')">Contact Us</b-nav-item>
-
+    <header class="p-0">
+      <b-navbar toggleable="lg">
+        <b-navbar-brand href="#"
+          ><div class="d-flex">
+            <img src="../assets/NiceJob.png" />
+            <h3>Student Internships</h3>
+          </div></b-navbar-brand
+        >
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item @click="navigateTo('/')">Home</b-nav-item>
+          <b-nav-item @click="navigateTo('/about-us')">About Us</b-nav-item>
+          <b-nav-item @click="navigateTo('/contact-us')">Contact Us</b-nav-item>
         </b-navbar-nav>
       </b-navbar>
     </header>
@@ -28,11 +32,10 @@ import store, { getAppStoreModule } from '~/store-modules'
 
 @Component({
   components: {
-    ErrorModal
+    ErrorModal,
   },
-  name: 'default-layout'
+  name: 'default-layout',
 })
-
 export default class DefaultLayout extends BaseComponent {
   // VUE.JS Props
   // VUEX
@@ -59,17 +62,24 @@ export default class DefaultLayout extends BaseComponent {
 }
 </script>
 <style lang="scss" scoped>
+@import '../assets/_general.scss';
 .default-layout {
   height: 100vh;
   //background-color: blue;
-   // background-image: "./assets/bgimage.jpeg";
-//    background: url(../assets/bgimage.jpeg) no-repeat 100%;
-background: url(../assets/bgimage1.jpg) no-repeat 100%;
+  // background-image: "./assets/bgimage.jpeg";
+  //    background: url(../assets/bgimage.jpeg) no-repeat 100%;
+  background: url(../assets/bgimage1.jpg) no-repeat 100%;
 }
 h3 {
   color: white;
 }
-.navbar-light .navbar-nav .nav-link  {
+.navbar-light .navbar-nav .nav-link {
   color: white;
+}
+img {
+  height: 48px;
+}
+h3 {
+  color: #f0b616;
 }
 </style>

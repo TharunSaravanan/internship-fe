@@ -1,0 +1,25 @@
+.form-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: grey;
+}
+
+/** Button default style override **/
+::v-deep {
+    .dropdown-toggle-split {
+        width: 25px !important;
+        padding-left: 2px;
+    }
+
+    .btn-default {
+        color: #000;
+        background-color: #f2f2f2;
+        border-color: #f2f2f2;
+    }
+
+    .show>.btn-default.dropdown-toggle {
+        color: #000;
+        background-color: #f2f2f2;
+        border-color: #f2f2f2;
+    }
+}

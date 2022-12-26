@@ -27,7 +27,7 @@
         <b-button class="icon twitter"
           ><font-awesome-icon icon="fab fa-twitter" />
         </b-button>
-        <b-button class="icon linkedin"
+        <b-button class="icon linkedin" @click="navigateToLinkedIn()"
           ><font-awesome-icon icon="fab fa-linkedin" />
         </b-button>
       </div>
@@ -62,6 +62,9 @@ export default class AboutUs extends BaseComponent {
   // beforeDestroy (): void {}
   // destroyed(): void {}
   // Private Methods
+  private navigateToLinkedIn(): void {
+    window.open('https://www.linkedin.com/in/tharun-saravanan', '_blank')
+  }
   // Helper Methods
   // Event Methods
   // Watchers
