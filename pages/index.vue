@@ -1,8 +1,8 @@
 <template>
   <div class="parent-container">
-    <h1>Find an internship program</h1>
-     <h1>as a student</h1>
-     <center><b-button variant="primary" @click="navigateToInternshipProg()">Internship Programs</b-button></center>
+    <h3>Are you a student looking to better yourself in your field? An internship is a great way to do that! <br/> <br/>  Here at Student Internships, we want you to have a nice and quick time finding an internship, and to achieve that we have tried to make the process of browsing as simple as possible, so go on ahead and start your search with the click of a button!</h3>
+    <br/>
+     <center><b-button variant="primary" @click="navigateToInternshipProg()">Find Your Internship</b-button></center>
   </div>
 </template>
 
@@ -52,9 +52,9 @@ export default class Home extends BaseComponent {
     transform: translateX(-50%) translateY(-50%);
 }
 
-h1 {
+h3 {
   color: #eb5b02;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 </style>
