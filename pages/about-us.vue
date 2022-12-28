@@ -7,7 +7,7 @@
         <span> Saravanan</span>
       </div>
     </div>
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-4 m-4">
       <h1>Hello!</h1>
       <h3 class="about-me-title">A Bit About Me</h3>
       <p>

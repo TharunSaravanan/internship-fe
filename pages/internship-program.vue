@@ -238,6 +238,7 @@ export default class InternshipProgram extends BaseComponent {
 @import '../assets/_general.scss';
 .parent-container {
   height: 100%;
+  padding-top: 4rem;
   background-color: #ffffff;
 }
 .internship-list {

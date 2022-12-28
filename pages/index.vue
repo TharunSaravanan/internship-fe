@@ -1,8 +1,31 @@
 <template>
-  <div class="parent-container">
-    <h3>Are you a student looking to better yourself in your field? An internship is a great way to do that! <br/> <br/>  Here at Student Internships, we want you to have a nice and quick time finding an internship, and to achieve that we have tried to make the process of browsing as simple as possible, so go on ahead and start your search with the click of a button!</h3>
-    <br/>
-     <center><b-button variant="primary" @click="navigateToInternshipProg()">Find Your Internship</b-button></center>
+  <div class="home-container container-fluid">
+    <span class="home-container__welcome-title">
+      <center>Welcome to <span>Student Internship</span></center>
+    </span>
+
+    <div class="home-container__description1">
+      <center>
+        Are you a student looking to better yourself in your field?
+      </center>
+      <span>
+        <center>An internship is a great way to do that!</center>
+      </span>
+    </div>
+
+    <div class="home-container__description2">
+      <center>
+        Here at <strong>Student Internships</strong>, we want you to have a nice
+        and quick time finding an internship, and to achieve that we have tried
+        to make the process of browsing as simple as possible, so go on ahead
+        and start your search with the click of a button!
+      </center>
+      <center>
+        <b-button class="btn-internship" @click="navigateToInternshipProg()"
+          >Find Your Internship</b-button
+        >
+      </center>
+    </div>
   </div>
 </template>
 
@@ -15,7 +38,7 @@ import BaseComponent from '@/shared/BaseComponent'
 import store, { getAppStoreModule } from '~/store-modules'
 // Stores
 @Component({
-  name: 'home'
+  name: 'home',
 })
 export default class Home extends BaseComponent {
   // VUE.JS Props
@@ -43,18 +66,55 @@ export default class Home extends BaseComponent {
 }
 </script>
 <style lang="scss" scoped>
-.parent-container{
-  position: absolute;
-    top: 50%;
-    left: 45%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+.home-container {
+  overflow-y: auto;
+  padding-bottom: 1.5rem;
+  padding-top: 6rem;
+  height: 100vh;
+  background: linear-gradient(
+      to right top,
+      #def2f1,
+      #e4f5f4,
+      #eaf7f7,
+      #f0faf9,
+      #f6fcfc,
+      #f6fcfc,
+      #f6fcfc,
+      #f6fcfc,
+      #f0faf9,
+      #eaf7f7,
+      #e4f5f4,
+      #def2f1
+    )
+    repeat-x scroll 0% 0%;
+  &__welcome-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #3b945e;
+    span {
+      color: #fccd04;
+    }
+  }
+  &__description1 {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #3b945e;
+    span {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+  }
+  &__description2 {
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #2b7a78;
+  }
 }
 
-h3 {
-  color: #eb5b02;
-    font-weight: bold;
-    font-size: 2rem;
+.btn-internship {
+  background-color: #3aafa9;
+  border: 1px solid #3aafa9;
 }
 </style>

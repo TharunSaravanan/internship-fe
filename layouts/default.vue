@@ -1,18 +1,69 @@
 <template>
   <div id="app" class="default-layout">
-    <header class="p-0">
-      <b-navbar toggleable="lg">
-        <b-navbar-brand href="#"
-          ><div class="d-flex">
-            <img src="../assets/NiceJob.png" />
-            <h3>Student Internships</h3>
-          </div></b-navbar-brand
-        >
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item @click="navigateTo('/')">Home</b-nav-item>
-          <b-nav-item @click="navigateTo('/about-us')">About Us</b-nav-item>
-          <b-nav-item @click="navigateTo('/contact-us')">Contact Us</b-nav-item>
-        </b-navbar-nav>
+    <header class="p-0 default-layout__header">
+      <b-navbar toggleable="lg" fixed="top" class="nav-bar">
+        <b-navbar-brand href="#" class="ml-3">
+          <img class="nav-bar__brand-img" src="../assets/NiceJob.png" />
+          <span class="nav-bar__brand-title">Student Internship</span>
+        </b-navbar-brand>
+        <!-- For responsive design of the nav bar -->
+        <b-navbar-toggle target="navbar-toggle-collapse" class="mr-3">
+          <template>
+            <font-awesome-icon icon="fa-solid fa-bars" />
+          </template>
+        </b-navbar-toggle>
+        <b-collapse id="navbar-toggle-collapse" is-nav>
+          <b-navbar-nav class="ml-auto nav-bar__nav-items">
+            <b-nav-item @click="navigateTo('/')">
+              <span
+                :class="[
+                  isLinkActive('/')
+                    ? 'nav-bar__nav-item-active'
+                    : 'nav-bar__nav-item',
+                ]"
+                >Home</span
+              >
+            </b-nav-item>
+            <b-nav-item @click="navigateTo('/internship-program')">
+              <span
+                :class="[
+                  isLinkActive('/internship-program')
+                    ? 'nav-bar__nav-item-active'
+                    : 'nav-bar__nav-item',
+                ]"
+                >Internship</span
+              >
+            </b-nav-item>
+            <b-nav-item @click="navigateTo('/about-us')">
+              <span
+                :class="[
+                  isLinkActive('/about-us')
+                    ? 'nav-bar__nav-item-active'
+                    : 'nav-bar__nav-item',
+                ]"
+                >About Us</span
+              >
+            </b-nav-item>
+            <b-nav-item @click="navigateTo('/contact-us')">
+              <span
+                :class="[
+                  isLinkActive('/contact-us')
+                    ? 'nav-bar__nav-item-active'
+                    : 'nav-bar__nav-item',
+                ]"
+                >Contact Us</span
+              >
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+
+        <!-- <b-collapse id="navbar-toggle-collapse" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="#">Link 1</b-nav-item>
+            <b-nav-item href="#">Link 2</b-nav-item>
+            <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse> -->
       </b-navbar>
     </header>
     <nuxt />
@@ -52,8 +103,12 @@ export default class DefaultLayout extends BaseComponent {
   // beforeDestroy(): void {}
   // destroyed(): void {}
   // Private Methods
-  navigateTo(value: string): void {
+  private navigateTo(value: string): void {
     this.$router.push(value)
+  }
+
+  private isLinkActive(activePath: string): boolean {
+    return this.$route.path === activePath
   }
   // Helper Methods
   // Event Methods
@@ -64,22 +119,51 @@ export default class DefaultLayout extends BaseComponent {
 <style lang="scss" scoped>
 @import '../assets/_general.scss';
 .default-layout {
-  height: 100vh;
-  //background-color: blue;
-  // background-image: "./assets/bgimage.jpeg";
-  //    background: url(../assets/bgimage.jpeg) no-repeat 100%;
-  background: url(../assets/bgimage1.jpg) no-repeat 100%;
+  overflow-y: hidden;
+  &__header {
+    .nav-bar {
+      padding: 0;
+      height: 3.5rem;
+      border-bottom: 1px solid #f2f2f2;
+      box-shadow: #def2f1 0px 6px 8px -2px, #feffff 0px 3px 8px -3px;
+      background-image: linear-gradient(to bottom right, #def2f1, #feffff);
+      @media only screen and (max-width: 912px) {
+        padding-top: 0;
+        margin-top: -5px;
+        // height: 4rem;
+      }
+      &__brand-img {
+        height: 48px;
+      }
+      &__brand-title {
+        font-size: 1.75rem;
+        color: #2b7a78;
+        font-weight: 400;
+        @media only screen and (max-width: 450px) {
+          display: none;
+        }
+      }
+      &__nav-items {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      &__nav-item {
+        color: #3aafa9;
+        text-align: center;
+        display: block;
+      }
+      &__nav-item-active {
+        color: #2b7a78;
+        text-align: center;
+        text-decoration: overline;
+        display: block;
+      }
+    }
+  }
 }
-h3 {
-  color: white;
-}
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-}
-img {
-  height: 48px;
-}
-h3 {
-  color: #f0b616;
+
+.navbar-collapse {
+  background-image: linear-gradient(to bottom right, #def2f1, #feffff);
+  margin-top: -4px !important;
 }
 </style>
