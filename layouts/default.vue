@@ -41,7 +41,7 @@
                     ? 'nav-bar__nav-item-active'
                     : 'nav-bar__nav-item',
                 ]"
-                >About Us</span
+                >About</span
               >
             </b-nav-item>
             <b-nav-item @click="navigateTo('/contact-us')">
@@ -51,19 +51,11 @@
                     ? 'nav-bar__nav-item-active'
                     : 'nav-bar__nav-item',
                 ]"
-                >Contact Us</span
+                >Contact</span
               >
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
-
-        <!-- <b-collapse id="navbar-toggle-collapse" is-nav>
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item href="#">Link 1</b-nav-item>
-            <b-nav-item href="#">Link 2</b-nav-item>
-            <b-nav-item href="#" disabled>Disabled</b-nav-item>
-          </b-navbar-nav>
-        </b-collapse> -->
       </b-navbar>
     </header>
     <nuxt />
@@ -116,10 +108,11 @@ export default class DefaultLayout extends BaseComponent {
   // Emitters
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/_general.scss';
 .default-layout {
   overflow-y: hidden;
+  height: 100%;
   &__header {
     .nav-bar {
       padding: 0;
