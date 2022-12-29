@@ -1,36 +1,31 @@
 <template>
-  <div class="parent-container row d-flex justify-content-center">
-    <div class="col-md-2 col-sm-12 contact">
-      <div class="row">
-        <div class="icon">
-          <font-awesome-icon icon="fa-solid fa-location-dot" />
-        </div>
-        <div>
-          <h4 class="heading-title">Address</h4>
-          <p>address 1</p>
-        </div>
+  <div class="contact-container">
+    <div class="col-md-8 contact-section">
+      <!-- <h3 class="contact-section__title">Contact Us</h3> -->
+      <div class="col-md-4 col-sm-12 contact-section__detail">
+        <b-button class="contact-section__detail__icon"
+          ><font-awesome-icon icon="fa-solid fa-location-dot" />
+        </b-button>
+        <label><b>#21B, Kalyani Tech Park, Bangalore - 560036</b></label>
       </div>
-      <div class="row mt-4">
-        <div class="icon">
-          <font-awesome-icon icon="fa-solid fa-phone" />
-        </div>
-        <div>
-          <h4 class="heading-title">Lets Talk</h4>
-          <p>1234567890</p>
-        </div>
+
+      <div class="col-md-4 col-sm-12 contact-section__detail">
+        <b-button class="contact-section__detail__icon"
+          ><font-awesome-icon icon="fa-solid fa-phone" />
+        </b-button>
+        <label>Phone: <b>+1(316 519-1547)</b></label>
       </div>
-      <div class="row mt-4">
-        <div class="icon">
-          <font-awesome-icon icon="fa-solid fa-envelope" />
-        </div>
-        <div>
-          <h4 class="heading-title">Email</h4>
-          <p>abcd@gmail.com</p>
-        </div>
+
+      <div class="col-md-4 col-sm-12 contact-section__detail">
+        <b-button class="contact-section__detail__icon"
+          ><font-awesome-icon icon="fa-solid fa-envelope" />
+        </b-button>
+        <label>Email: <b>bstharun@gmail.com</b></label>
       </div>
     </div>
-    <div class="col-sm-12 col-md-4 message-container">
-      <h4>Send Us A Message</h4>
+
+    <div class="col-md-6 col-sm-12 message-section">
+      <h3 class="message-section__title">Send Us Message</h3>
       <b-form class="mt-4">
         <b-form-group id="input-group-2" label="Name" label-for="input-2">
           <b-form-input
@@ -53,8 +48,8 @@
             placeholder="Message"
           ></b-form-textarea>
         </b-form-group>
-        <div class="d-flex justify-content-end">
-         <b-button type="submit" variant="primary">Submit</b-button>
+        <div class="d-flex justify-content-center">
+          <b-button type="submit" variant="primary">Submit</b-button>
         </div>
       </b-form>
     </div>
@@ -95,37 +90,44 @@ export default class ContactUs extends BaseComponent {
 }
 </script>
 <style lang="scss" scoped>
-.parent-container {
+@import '../assets/_general.scss';
+.contact-container {
   height: 100%;
-  background-color: #ffffff;
+  padding-top: 6rem;
+  overflow-y: auto;
+  .contact-section {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__detail {
+      text-align: center;
+      &__icon {
+        pointer-events: none;
+        background-color: #2b7a78;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+      }
+      label {
+        display: block;
+        padding-top: 0.5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+  .message-section {
+    position: relative;
+    margin: auto;
+    padding-bottom: 2rem;
+    &__title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #3b945e;
+      text-align: center;
+    }
+  }
 }
 
-.icon {
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.geo-icon {
-  font-size: 32px;
-}
-
-.heading-title {
-  margin-top: 2px;
-}
-
-.contact {
-  margin-top: 6rem;
-  margin-left: 10rem;
-}
-
-.message-container {
-  padding-left: 2rem;
-  margin-top: 4rem;
-  border-left: 1px solid #000000;
-  height: fit-content;
-}
-
-h4 {
-  font-weight: 400;
-}
 </style>

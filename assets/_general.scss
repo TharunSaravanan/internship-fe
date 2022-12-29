@@ -9,10 +9,30 @@ body {
     height: 100%;
 }
 
-.form-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: grey;
+// .form-label {
+//     font-size: 13px;
+//     font-weight: 500;
+//     color: grey;
+// }
+
+.btn-primary {
+    background-color: #3aafa9;
+    border: 1px solid #3aafa9;
+
+    &:hover {
+        background-color: #def2f1;
+        color: #3aafa9;
+    }
+}
+
+::v-deep {
+    .form-group {
+        label {
+            font-weight: 400;
+            color: #17252a;
+            margin-bottom: 0.25rem;
+        }
+    }
 }
 
 /** Button default style override **/

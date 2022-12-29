@@ -21,7 +21,7 @@
         and start your search with the click of a button!
       </center>
       <center>
-        <b-button class="btn-internship" @click="navigateToInternshipProg()"
+        <b-button class="btn-internship" variant="primary" @click="navigateToInternshipProg()"
           >Find Your Internship</b-button
         >
       </center>
@@ -66,6 +66,7 @@ export default class Home extends BaseComponent {
 }
 </script>
 <style lang="scss" scoped>
+@import '../assets/_general.scss';
 .home-container {
   overflow-y: auto;
   padding-bottom: 1.5rem;
@@ -111,10 +112,5 @@ export default class Home extends BaseComponent {
     font-weight: 300;
     color: #2b7a78;
   }
-}
-
-.btn-internship {
-  background-color: #3aafa9;
-  border: 1px solid #3aafa9;
 }
 </style>
