@@ -58,13 +58,16 @@ export default class AppStoreModule extends VuexModule implements IAppStore {
 
   @Mutation
   public filterInternshipList(filterObject: { qualification: string, period: string, freeText: string }) {
-    if (filterObject.qualification! = '') {
-      this.arrInternships = this.allArrIntenships.filter(item => item.qualification === filterObject.qualification);
+    this.arrInternships = [];
+    let internships = this.allArrIntenships;
+    if (filterObject.qualification !== '') {
+      internships = internships.filter(item => item.qualification === filterObject.qualification);
     }
-    if (filterObject.period != '') {
-      this.arrInternships = this.allArrIntenships.filter(item => item.period === filterObject.period);
+    if (filterObject.period !== '') {
+      internships = internships.filter(item => item.period === filterObject.period);
     }
-      this.arrInternships = this.allArrIntenships.filter(item => (item.name.concat( item.company).toLowerCase().includes(filterObject.freeText.toLowerCase())));
+    internships = internships.filter(item => (item.name.concat( item.company).toLowerCase().includes(filterObject.freeText.toLowerCase())));
+    this.arrInternships = internships;
   }
 
   // Actions
