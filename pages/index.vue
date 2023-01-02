@@ -113,4 +113,8 @@ export default class Home extends BaseComponent {
     color: #2b7a78;
   }
 }
+
+.btn-internship {
+  margin-bottom: 2rem;
+}
 </style>
