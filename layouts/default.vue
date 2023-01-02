@@ -4,7 +4,7 @@
       <b-navbar toggleable="lg" fixed="top" class="nav-bar">
         <b-navbar-brand href="#" class="ml-3">
           <img class="nav-bar__brand-img" src="../assets/NiceJob.png" />
-          <span class="nav-bar__brand-title">Student Internship</span>
+          <span class="nav-bar__brand-title">Student Internships</span>
         </b-navbar-brand>
         <!-- For responsive design of the nav bar -->
         <b-navbar-toggle target="navbar-toggle-collapse" class="mr-3">
@@ -31,7 +31,7 @@
                     ? 'nav-bar__nav-item-active'
                     : 'nav-bar__nav-item',
                 ]"
-                >Internship</span
+                >Internships</span
               >
             </b-nav-item>
             <b-nav-item @click="navigateTo('/about-us')">
@@ -41,7 +41,7 @@
                     ? 'nav-bar__nav-item-active'
                     : 'nav-bar__nav-item',
                 ]"
-                >About</span
+                >About Us</span
               >
             </b-nav-item>
             <b-nav-item @click="navigateTo('/contact-us')">
@@ -51,7 +51,7 @@
                     ? 'nav-bar__nav-item-active'
                     : 'nav-bar__nav-item',
                 ]"
-                >Contact</span
+                >Contact Us</span
               >
             </b-nav-item>
           </b-navbar-nav>

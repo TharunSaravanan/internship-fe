@@ -1,7 +1,7 @@
 <template>
   <div class="home-container container-fluid">
     <span class="home-container__welcome-title">
-      <center>Welcome to <span>Student Internship</span></center>
+      <center>Welcome to <span>Student Internships</span></center>
     </span>
 
     <div class="home-container__description1">
