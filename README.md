@@ -1,4 +1,4 @@
-# oppurtunity-finder
+# Student-Internships
 
 ## Build Setup
 

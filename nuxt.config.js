@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'oppurtunity-finder',
+    title: 'Student Internships',
     htmlAttrs: {
       lang: 'en',
     },
