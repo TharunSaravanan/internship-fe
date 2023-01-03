@@ -16,8 +16,7 @@
     <div class="home-container__description2">
       <center>
         Here at <strong>Student Internships</strong>, we want you to have a nice
-        and quick time finding an internship, and to achieve that we have tried
-        to make the process of browsing as simple as possible, so go on ahead
+        and quick time finding an internship, so go on ahead
         and start your search with the click of a button!
       </center>
       <center>

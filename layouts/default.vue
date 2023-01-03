@@ -3,8 +3,8 @@
     <header class="p-0 default-layout__header">
       <b-navbar toggleable="lg" fixed="top" class="nav-bar">
         <b-navbar-brand href="#" class="ml-3">
-          <img class="nav-bar__brand-img" src="../assets/NiceJob.png" />
-          <span class="nav-bar__brand-title">Student Internships</span>
+          <img class="nav-bar__brand-img" src="../assets/logoWithText.png" />
+          <span class="nav-bar__brand-title"></span>
         </b-navbar-brand>
         <!-- For responsive design of the nav bar -->
         <b-navbar-toggle target="navbar-toggle-collapse" class="mr-3">
@@ -126,7 +126,7 @@ export default class DefaultLayout extends BaseComponent {
         // height: 4rem;
       }
       &__brand-img {
-        height: 48px;
+        height: 45px;
       }
       &__brand-title {
         font-size: 1.75rem;
