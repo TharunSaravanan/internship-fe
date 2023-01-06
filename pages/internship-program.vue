@@ -1,6 +1,6 @@
 <template>
   <div class="internship-container container-fluid">
-    <div class="col-md-8">
+    <div class="col-md-8" v-if="!showDetailsSection">
       <div class="internship-container__filter-section">
         <div class="col-md-3 col-sm-12 no-space">
           <b-dropdown
@@ -52,7 +52,7 @@
       </div>
       <b-overlay :show="isLoading" rounded="lg">
         <div class="internship-container__internship-list pt-2">
-          <internship-tile />
+          <internship-tile @tileClickHandler="tileClickHandler" />
         </div>
       </b-overlay>
       <b-pagination
@@ -64,6 +64,75 @@
         align="fill"
         :disabled="isLoading"
       ></b-pagination>
+    </div>
+    <div
+      class="internship-container__details-section col-md-6 col-sm-12"
+      v-if="showDetailsSection"
+    >
+      <span class="d-block">
+        <b-link href="" @click="backToInternshipList()">Back</b-link>
+      </span>
+      <center>
+        <h3>{{ selectedInternship.name }}</h3>
+      </center>
+      <div class="mt-4">
+        <h5>{{ selectedInternship.company }}</h5>
+        <label>Company</label>
+      </div>
+      <div>
+        <h5>{{ selectedInternship.industry }}</h5>
+        <label>Industry</label>
+      </div>
+
+      <div class="d-flex py-3">
+        <span class="pr-4"
+          ><font-awesome-icon icon="fa-solid fa-calendar-days" />
+          {{ selectedInternship.postedDate }}
+        </span>
+        <span class="pr-4"
+          ><font-awesome-icon icon="fa-solid fa-location-dot" />
+          {{
+            selectedInternship.city + '(' + selectedInternship.countryCode + ')'
+          }}
+        </span>
+        <span class="pr-4"
+          ><font-awesome-icon icon="fa-solid fa-building-columns" />
+          {{ selectedInternship.qualification }}
+        </span>
+        <span class="pr-4"
+          ><span
+            ><svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              class="shrink-0"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+              ></path></svg
+          ></span>
+          {{ selectedInternship.period }}
+        </span>
+      </div>
+      <h5 class="mb-2">Internship Description</h5>
+      <p
+        v-for="(text, lineNumber) of selectedInternship.description.split('\n')"
+        v-bind:key="lineNumber"
+      >
+        {{ text }}<br />
+      </p>
+      <center>
+        <b-button
+          class="w-100"
+          variant="primary"
+          @click="openLink(selectedInternship.jobUrl)"
+          >Apply Now
+        </b-button>
+      </center>
     </div>
   </div>
 </template>
@@ -96,6 +165,8 @@ export default class InternshipProgram extends BaseComponent {
   public selectedPeriod: string = ''
   public selectedIndustry: string = ''
   public filterText: string = ''
+  public selectedInternship: IInternship = {} as IInternship
+  public showDetailsSection: boolean = false
   //Pagination
   public currentPage: number = 1
   // Getters
@@ -124,6 +195,7 @@ export default class InternshipProgram extends BaseComponent {
     this.selectedPeriod = 'All'
     this.selectedIndustry = 'All'
     this.filterText = ''
+    this.showDetailsSection = false
     this.updateLoading(true)
     this.appStore.getInternships().then(() => {
       this.updateLoading(false)
@@ -159,6 +231,19 @@ export default class InternshipProgram extends BaseComponent {
   private paginationChangeHandler(pageNumber: number): void {
     this.appStore.updateCurrentPageNumber(pageNumber)
   }
+
+  private backToInternshipList(): void {
+    this.showDetailsSection = false
+  }
+  private tileClickHandler(internship: IInternship): void {
+    this.selectedInternship = internship
+    this.showDetailsSection = true
+  }
+
+  private openLink(url: string): void {
+    window.open(url, '_blank')
+  }
+
   // Helper Methods
   // Event Methods
   // Watchers
@@ -189,6 +274,13 @@ export default class InternshipProgram extends BaseComponent {
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
       }
+    }
+  }
+  &__details-section {
+    height: 85vh;
+    overflow-y: auto;
+    h5 {
+      margin-bottom: 0;
     }
   }
 }

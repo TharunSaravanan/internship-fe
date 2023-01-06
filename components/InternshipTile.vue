@@ -4,6 +4,7 @@
       class="internship-tile-container__tile"
       v-for="internship of getInternshipList"
       :key="internship.id"
+      @click="tileClickHandler(internship)"
     >
       <div
         class="
@@ -15,7 +16,10 @@
         <div>
           <h3 class="text-title">{{ internship.name }}</h3>
           <span class="text-sub-title mt-1">
-            <a :href="internship.companyUrl" target="_blank"
+            <a
+              :href="internship.companyUrl"
+              target="_blank"
+              @click="linkEventHandler($event)"
               ><span
                 >{{ internship.company }} | {{ internship.industry }}</span
               ></a
@@ -23,7 +27,11 @@
           </span>
         </div>
         <div>
-          <a :href="internship.jobUrl" target="_blank" class="btn-apply-now"
+          <a
+            :href="internship.jobUrl"
+            target="_blank"
+            class="btn-apply-now"
+            @click="linkEventHandler($event)"
             >Apply Now
           </a>
         </div>
@@ -61,7 +69,7 @@
         </span>
       </div>
 
-      <hr class="px-4 my-2" />
+      <!-- <hr class="px-4 my-2" />
 
       <span v-if="!internship.isSelected"
         ><span
@@ -96,7 +104,7 @@
             >Show less...</b-link
           >
         </div>
-      </span>
+      </span> -->
     </div>
   </div>
 </template>
@@ -119,16 +127,18 @@ export default class InternshipTile extends BaseComponent {
   // VUEX
   // Properties
   public appStore = getAppStoreModule(store)
+ 
   // Fields
   // Getters
   private get getInternshipList() {
-    return this.appStore.getInternshipsWithPagination;
+    return this.appStore.getInternshipsWithPagination
   }
   // Lifecycle Handlers
   // beforeCreate(): void {}
   // beforeMount(): void {}
   public created(): void {}
-  // mounted(): void {}
+  public mounted(): void {
+  }
   // beforeUpdate(): void {}
   // updated(): void {}
   // beforeDestroy(): void {}
@@ -138,6 +148,17 @@ export default class InternshipTile extends BaseComponent {
     internship.isSelected = value
     this.appStore.setShowMoreLessDetails(internship)
   }
+
+  private linkEventHandler(event: MouseEvent): void {
+    event.stopPropagation()
+  }
+
+  private tileClickHandler(internship: IInternship): void {
+    debugger
+    this.$emit('tileClickHandler', internship);
+  }
+
+ 
   // Helper Methods
   // Event Methods
   // Watchers
@@ -148,11 +169,15 @@ export default class InternshipTile extends BaseComponent {
 .internship-tile-container {
   height: 71vh;
   overflow-y: auto;
+  cursor: pointer;
   &__tile {
     border: 1px solid #d0d2d6;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+    &:hover {
+      border-left: 5px solid #3b945e;
+    }
     &__heading {
       .text-title {
         font-size: 1.25rem;
@@ -167,13 +192,14 @@ export default class InternshipTile extends BaseComponent {
         margin: 0;
       }
 
-      .text-details {
-        color: #696969;
-      }
       .btn-apply-now {
         font-size: 1rem;
         font-weight: 500;
       }
+    }
+    .text-details {
+      color: #696969;
+      flex-wrap: wrap;
     }
   }
 }
