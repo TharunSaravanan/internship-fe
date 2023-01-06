@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-md-6 col-sm-12 message-section">
-      <h3 class="message-section__title">Send Us Message</h3>
+      <h3 class="message-section__title">Send Us Feedback</h3>
       <b-form class="mt-4">
         <b-form-group id="input-group-2" label="Name" label-for="input-2">
           <b-form-input
@@ -93,7 +93,7 @@ export default class ContactUs extends BaseComponent {
 @import '../assets/_general.scss';
 .contact-container {
   height: 100%;
-  padding-top: 6rem;
+  padding-top: 2rem;
   overflow-y: auto;
   .contact-section {
     position: relative;

@@ -17,11 +17,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '../assets/fav.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '../favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-   css: ['~/assets/_general.scss'],
+  css: ['~/assets/_general.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '~/plugins/setup.ts', ssr: false },
@@ -40,11 +40,11 @@ export default {
     '@nuxtjs/fontawesome'
   ],
   fontawesome: {
-    icons:{
-     solid:true,
-     brands:true
+    icons: {
+      solid: true,
+      brands: true
     }
-   },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -65,7 +65,7 @@ export default {
     host: '0.0.0.0',
     timing: false
   },
-  
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

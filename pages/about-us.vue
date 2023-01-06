@@ -90,7 +90,7 @@ export default class AboutUs extends BaseComponent {
 <style lang="scss" scoped>
 .about-container {
   height: 100%;
-  padding-top: 2.5rem;
+ // padding-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

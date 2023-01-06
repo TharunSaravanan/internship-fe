@@ -1,64 +1,68 @@
 <template>
   <div id="app" class="default-layout">
-    <header class="p-0 default-layout__header">
-      <b-navbar toggleable="lg" fixed="top" class="nav-bar">
-        <b-navbar-brand href="#" class="ml-3">
-          <img class="nav-bar__brand-img" src="../assets/logoWithText.png" />
-          <span class="nav-bar__brand-title"></span>
-        </b-navbar-brand>
-        <!-- For responsive design of the nav bar -->
-        <b-navbar-toggle target="navbar-toggle-collapse" class="mr-3">
-          <template>
-            <font-awesome-icon icon="fa-solid fa-bars" />
-          </template>
-        </b-navbar-toggle>
-        <b-collapse id="navbar-toggle-collapse" is-nav>
-          <b-navbar-nav class="ml-auto nav-bar__nav-items">
-            <b-nav-item @click="navigateTo('/')">
-              <span
-                :class="[
-                  isLinkActive('/')
-                    ? 'nav-bar__nav-item-active'
-                    : 'nav-bar__nav-item',
-                ]"
-                >Home</span
-              >
-            </b-nav-item>
-            <b-nav-item @click="navigateTo('/internship-program')">
-              <span
-                :class="[
-                  isLinkActive('/internship-program')
-                    ? 'nav-bar__nav-item-active'
-                    : 'nav-bar__nav-item',
-                ]"
-                >Internships</span
-              >
-            </b-nav-item>
-            <b-nav-item @click="navigateTo('/about-us')">
-              <span
-                :class="[
-                  isLinkActive('/about-us')
-                    ? 'nav-bar__nav-item-active'
-                    : 'nav-bar__nav-item',
-                ]"
-                >About Us</span
-              >
-            </b-nav-item>
-            <b-nav-item @click="navigateTo('/contact-us')">
-              <span
-                :class="[
-                  isLinkActive('/contact-us')
-                    ? 'nav-bar__nav-item-active'
-                    : 'nav-bar__nav-item',
-                ]"
-                >Contact Us</span
-              >
-            </b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </header>
-    <nuxt />
+    <div>
+      <header class="p-0 default-layout__header">
+        <b-navbar toggleable="lg" fixed="top" class="nav-bar">
+          <b-navbar-brand href="#" class="ml-3">
+            <img class="nav-bar__brand-img" src="../assets/logoWithText.png" />
+            <span class="nav-bar__brand-title"></span>
+          </b-navbar-brand>
+          <!-- For responsive design of the nav bar -->
+          <b-navbar-toggle target="navbar-toggle-collapse" class="mr-3">
+            <template>
+              <font-awesome-icon icon="fa-solid fa-bars" />
+            </template>
+          </b-navbar-toggle>
+          <b-collapse id="navbar-toggle-collapse" is-nav>
+            <b-navbar-nav class="ml-auto nav-bar__nav-items">
+              <b-nav-item @click="navigateTo('/')">
+                <span
+                  :class="[
+                    isLinkActive('/')
+                      ? 'nav-bar__nav-item-active'
+                      : 'nav-bar__nav-item',
+                  ]"
+                  >Home</span
+                >
+              </b-nav-item>
+              <b-nav-item @click="navigateTo('/internship-program')">
+                <span
+                  :class="[
+                    isLinkActive('/internship-program')
+                      ? 'nav-bar__nav-item-active'
+                      : 'nav-bar__nav-item',
+                  ]"
+                  >Internships</span
+                >
+              </b-nav-item>
+              <b-nav-item @click="navigateTo('/about-us')">
+                <span
+                  :class="[
+                    isLinkActive('/about-us')
+                      ? 'nav-bar__nav-item-active'
+                      : 'nav-bar__nav-item',
+                  ]"
+                  >About Us</span
+                >
+              </b-nav-item>
+              <b-nav-item @click="navigateTo('/contact-us')">
+                <span
+                  :class="[
+                    isLinkActive('/contact-us')
+                      ? 'nav-bar__nav-item-active'
+                      : 'nav-bar__nav-item',
+                  ]"
+                  >Contact Us</span
+                >
+              </b-nav-item>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
+      </header>
+    </div>
+    <div class="default-layout__route-container">
+      <nuxt />
+    </div>
     <error-modal />
   </div>
 </template>
@@ -152,6 +156,10 @@ export default class DefaultLayout extends BaseComponent {
         display: block;
       }
     }
+  }
+  &__route-container {
+   height: calc(100% - 3.5rem);
+   margin-top: 3.5rem;
   }
 }
 

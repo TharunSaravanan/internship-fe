@@ -69,8 +69,8 @@ export default class Home extends BaseComponent {
 .home-container {
   overflow-y: auto;
   padding-bottom: 1.5rem;
-  padding-top: 6rem;
-  height: 100vh;
+  padding-top: 2rem;
+  height: 100%;
   background: linear-gradient(
       to right top,
       #def2f1,
@@ -113,7 +113,7 @@ export default class Home extends BaseComponent {
   }
 }
 
-.btn-internship {
-  margin-bottom: 2rem;
-}
+//.btn-internship {
+//  margin-bottom: 2rem;
+//}
 </style>
