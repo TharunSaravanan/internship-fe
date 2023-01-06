@@ -60,9 +60,9 @@
         </b-navbar>
       </header>
     </div>
-    <div class="default-layout__route-container">
-      <nuxt />
-    </div>
+      <div class="default-layout__route-container">
+        <nuxt />
+      </div>
     <error-modal />
   </div>
 </template>
@@ -158,8 +158,8 @@ export default class DefaultLayout extends BaseComponent {
     }
   }
   &__route-container {
-   height: calc(100% - 3.5rem);
-   margin-top: 3.5rem;
+    height: calc(100% - 3.5rem);
+    margin-top: 3.5rem;
   }
 }
 

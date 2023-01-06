@@ -9,11 +9,13 @@ body {
     height: 100%;
 }
 
-// .form-label {
-//     font-size: 13px;
-//     font-weight: 500;
-//     color: grey;
-// }
+.form-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 0;
+    line-height: 0.5rem !important;
+}
 
 .btn-primary {
     background-color: #3aafa9;
@@ -37,15 +39,11 @@ body {
 
 /** Button default style override **/
 ::v-deep {
-    .dropdown-toggle-split {
-        width: 25px !important;
-        padding-left: 2px;
-    }
 
     .btn-default {
         color: #000;
         background-color: #f2f2f2;
-        border-color: #f2f2f2;
+        border-color: #e2e2e2;
     }
 
     .show>.btn-default.dropdown-toggle {
@@ -53,7 +51,29 @@ body {
         background-color: #f2f2f2;
         border-color: #f2f2f2;
     }
+
+    .dropdown-menu.show {
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dropdown-toggle::after {
+        margin-top: 0.5rem;
+    }
+
+    .dropdown-item {
+        white-space: pre-wrap;
+    }
 }
+
+
+
+
+
 
 /** scrollbar css override **/
 ::-webkit-scrollbar {

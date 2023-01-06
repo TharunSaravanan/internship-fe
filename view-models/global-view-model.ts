@@ -3,11 +3,9 @@ export interface IEnvironmentVariables {
   envId: string;
 }
 
-
-
-export interface IBootstrapSelectValues<T> {
-  value: T;
-  text: string;
+export interface IBootstrapSelectValues {
+  id: number;
+  name: string;
   disabled?: boolean;
 }
 
