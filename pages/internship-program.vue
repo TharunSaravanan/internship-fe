@@ -1,6 +1,6 @@
 <template>
-  <div class="internship-container container-fluid">
-    <div class="col-md-8" v-if="!showDetailsSection">
+  <div class="internship-container container-fluid px-2">
+    <div class="col-md-8 px-0" v-if="!showDetailsSection">
       <div class="internship-container__filter-section">
         <div class="col-md-3 col-sm-12 no-space">
           <b-dropdown
@@ -66,20 +66,20 @@
       ></b-pagination>
     </div>
     <div
-      class="internship-container__details-section col-md-6 col-sm-12"
+      class="internship-container__details-section col-md-6 col-sm-12 px-1"
       v-if="showDetailsSection"
     >
       <span class="d-block">
-        <b-link href="" @click="backToInternshipList()">Back</b-link>
+        <b-link href="" @click="backToInternshipList()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Back</b-link>
       </span>
       <center>
         <h3>{{ selectedInternship.name }}</h3>
       </center>
-      <div class="mt-4">
+      <div class="mt-4 txt-details">
         <h5>{{ selectedInternship.company }}</h5>
         <label>Company</label>
       </div>
-      <div>
+      <div class=" mt-2 txt-details">
         <h5>{{ selectedInternship.industry }}</h5>
         <label>Industry</label>
       </div>
@@ -256,6 +256,7 @@ export default class InternshipProgram extends BaseComponent {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
+  height: 100%;
   &__filter-section {
     display: flex;
     justify-content: space-between;
@@ -279,6 +280,9 @@ export default class InternshipProgram extends BaseComponent {
   &__details-section {
     height: 85vh;
     overflow-y: auto;
+    .txt-details{
+      line-height: 0.75rem;
+    }
     h5 {
       margin-bottom: 0;
     }
