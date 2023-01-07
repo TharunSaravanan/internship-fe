@@ -50,6 +50,75 @@
           <b-button variant="primary" @click="applyFilter()"> Apply</b-button>
         </div>
       </div>
+      <!-- Responsive filter section -->
+      <div class="d-flex justify-content-end">
+        <b-link id="apply-filter">Apply Filter </b-link>
+      </div>
+
+      <b-popover
+        target="apply-filter"
+        triggers="click"
+        :show.sync="popoverShow"
+        placement="auto"
+        container="my-container"
+        ref="popover"
+      >
+        <template #title>
+          <b-button @click="onClose()" class="close" aria-label="Close">
+            <span class="d-inline-block" aria-hidden="true">&times;</span>
+          </b-button>
+          Filter
+        </template>
+
+        <div>
+          <div>
+            <b-dropdown
+              :text="selectedQualification"
+              variant="default"
+              class="w-100"
+            >
+              <b-dropdown-item
+                v-for="qualification of ddQualifications"
+                :key="qualification.id + qualification.name"
+                @click="qualificationSelect(qualification.name)"
+                >{{ qualification.name }}</b-dropdown-item
+              >
+            </b-dropdown>
+            <label class="form-label">Qualification </label>
+          </div>
+          <div>
+            <b-dropdown :text="selectedPeriod" variant="default" class="w-100">
+              <b-dropdown-item
+                v-for="period of ddPeriods"
+                :key="period.id + period.name"
+                @click="periodSelect(period.name)"
+                >{{ period.name }}</b-dropdown-item
+              >
+            </b-dropdown>
+            <label class="form-label">Period </label>
+          </div>
+          <div>
+            <b-dropdown
+              :text="selectedIndustry"
+              variant="default"
+              class="w-100"
+            >
+              <b-dropdown-item
+                v-for="industry of ddIndustries"
+                :key="industry.id + industry.name"
+                @click="industrySelect(industry.name)"
+                >{{ industry.name }}</b-dropdown-item
+              >
+            </b-dropdown>
+            <label class="form-label">Industry </label>
+          </div>
+
+          <b-button @click="applyFilter()" size="sm" variant="primary"
+            >Apply</b-button
+          >
+        </div>
+      </b-popover>
+
       <b-overlay :show="isLoading" rounded="lg">
         <div class="internship-container__internship-list pt-2">
           <internship-tile @tileClickHandler="tileClickHandler" />
@@ -70,7 +139,9 @@
       v-if="showDetailsSection"
     >
       <span class="d-block">
-        <b-link href="" @click="backToInternshipList()"><font-awesome-icon icon="fa-solid fa-arrow-left" /> Back</b-link>
+        <b-link href="" @click="backToInternshipList()"
+          ><font-awesome-icon icon="fa-solid fa-arrow-left" /> Back</b-link
+        >
       </span>
       <center>
         <h3>{{ selectedInternship.name }}</h3>
@@ -79,7 +150,7 @@
         <h5>{{ selectedInternship.company }}</h5>
         <label>Company</label>
       </div>
-      <div class=" mt-2 txt-details">
+      <div class="mt-2 txt-details">
         <h5>{{ selectedInternship.industry }}</h5>
         <label>Industry</label>
       </div>
@@ -167,6 +238,7 @@ export default class InternshipProgram extends BaseComponent {
   public filterText: string = ''
   public selectedInternship: IInternship = {} as IInternship
   public showDetailsSection: boolean = false
+  public popoverShow: boolean = false
   //Pagination
   public currentPage: number = 1
   // Getters
@@ -244,6 +316,10 @@ export default class InternshipProgram extends BaseComponent {
     window.open(url, '_blank')
   }
 
+  private onClose() {
+    this.popoverShow = false
+  }
+
   // Helper Methods
   // Event Methods
   // Watchers
@@ -280,7 +356,7 @@ export default class InternshipProgram extends BaseComponent {
   &__details-section {
     height: 85vh;
     overflow-y: auto;
-    .txt-details{
+    .txt-details {
       line-height: 0.75rem;
     }
     h5 {
