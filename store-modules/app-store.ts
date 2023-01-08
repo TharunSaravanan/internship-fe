@@ -104,8 +104,7 @@ export default class AppStoreModule extends VuexModule implements IAppStore {
   @Mutation
   public setIndustries(internships: IInternship[]): void {
     this.ddIndustries = []
-    let industries: IBootstrapSelectValues[] = [];
-    
+    let industries: IBootstrapSelectValues[] = [];   
     internships.forEach((item: IInternship, index) => {
       if (!industries.some((industry) => industry.name === item.industry)) {
         industries.push({ id: index, name: item.industry } as IBootstrapSelectValues);
