@@ -154,7 +154,6 @@ export default class InternshipTile extends BaseComponent {
   }
 
   private tileClickHandler(internship: IInternship): void {
-    debugger
     this.$emit('tileClickHandler', internship);
   }
 
@@ -167,7 +166,7 @@ export default class InternshipTile extends BaseComponent {
 </script>
 <style lang="scss" scoped>
 .internship-tile-container {
-  height: 71vh;
+  height: 100%;
   overflow-y: auto;
   cursor: pointer;
   &__tile {

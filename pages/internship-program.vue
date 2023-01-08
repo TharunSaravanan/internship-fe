@@ -1,5 +1,5 @@
 <template>
-  <div class="internship-container container-fluid px-2">
+  <div class="internship-container container px-2">
     <div class="col-md-8 px-0" v-if="!showDetailsSection">
       <div class="internship-container__filter-section">
         <div class="col-md-3 col-sm-12 no-space">
@@ -119,7 +119,11 @@
         </div>
       </b-popover>
 
-      <b-overlay :show="isLoading" rounded="lg">
+      <b-overlay
+        :show="isLoading"
+        rounded="lg"
+        class="internship-container__internship-parent"
+      >
         <div class="internship-container__internship-list pt-2">
           <internship-tile @tileClickHandler="tileClickHandler" />
         </div>
@@ -135,7 +139,7 @@
       ></b-pagination>
     </div>
     <div
-      class="internship-container__details-section col-md-6 col-sm-12 px-1"
+      class="internship-container__details-section col-md-9 col-sm-12 px-1"
       v-if="showDetailsSection"
     >
       <span class="d-block">
@@ -341,7 +345,11 @@ export default class InternshipProgram extends BaseComponent {
       margin: 0;
     }
   }
+  &__internship-parent {
+    height: 80%;
+  }
   &__internship-list {
+    height: 100% !important;
     border-top: 1px solid #e2e2e2;
     margin-top: 0.5rem;
     .pagination {
@@ -354,13 +362,30 @@ export default class InternshipProgram extends BaseComponent {
     }
   }
   &__details-section {
-    height: 85vh;
+    height: 100%;
     overflow-y: auto;
+    padding-bottom: 1.5rem;
     .txt-details {
       line-height: 0.75rem;
     }
     h5 {
       margin-bottom: 0;
+    }
+  }
+  #apply-filter {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    #apply-filter {
+      display: block;
+    }
+    .internship-container {
+      &__filter-section {
+        display: none;
+      }
+      &__internship-parent {
+        height: 85%;
+      }
     }
   }
 }
