@@ -334,6 +334,9 @@ export default class InternshipProgram extends BaseComponent {
 @import '../assets/_general.scss';
 .internship-container {
   padding-top: 1rem;
+  @media only screen and (max-width: 768px) {
+    padding-top: 0.25rem;
+  }
   display: flex;
   justify-content: center;
   height: 100%;
