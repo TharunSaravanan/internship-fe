@@ -1,3 +1,4 @@
+export { default as InternshipTile } from '../..\\components\\InternshipTile.vue'
 export { default as SharedErrorModal } from '../..\\components\\shared\\ErrorModal.vue'
 
 // nuxt/nuxt.js#8607

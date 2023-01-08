@@ -1,4 +1,7 @@
 {
+  "InternshipTile": {
+    "description": "Auto imported from components/InternshipTile.vue"
+  },
   "SharedErrorModal": {
     "description": "Auto imported from components/shared/ErrorModal.vue"
   }
