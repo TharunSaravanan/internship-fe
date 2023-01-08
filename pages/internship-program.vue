@@ -112,10 +112,14 @@
             </b-dropdown>
             <label class="form-label">Industry </label>
           </div>
-
-          <b-button @click="applyFilter()" size="sm" variant="primary"
-            >Apply</b-button
-          >
+          <div class="d-flex mt-3">
+            <b-button @click="resetFilter()" size="sm" class="mx-3" variant="secondary"
+              >Reset Filter</b-button
+            >
+            <b-button @click="applyFilter()" size="sm" class="mx-3" variant="primary"
+              >Apply</b-button
+            >
+          </div>
         </div>
       </b-popover>
 
@@ -294,6 +298,13 @@ export default class InternshipProgram extends BaseComponent {
     this.selectedIndustry = option
   }
 
+  private resetFilter(): void {
+    this.selectedQualification = 'All'
+    this.selectedPeriod = 'All'
+    this.selectedIndustry = 'All'
+    this.applyFilter()
+  }
+
   private applyFilter() {
     let filterObject: IFilterRequestPayload = {
       qualification:
@@ -302,6 +313,7 @@ export default class InternshipProgram extends BaseComponent {
       industry: this.selectedIndustry === 'All' ? '' : this.selectedIndustry,
     }
     this.appStore.filterInternshipList(filterObject)
+    this.popoverShow = false
   }
 
   private paginationChangeHandler(pageNumber: number): void {
