@@ -25,8 +25,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '~/plugins/setup.ts', ssr: false },
+  { src: '~/plugins/firebase.ts', mode: 'client', ssr: false },
   { src: '~/plugins/axios-accessor.ts', mode: 'client' },
-  { src: '~/plugins/axios.ts', mode: 'client', ssr: false },],
+  { src: '~/plugins/axios.ts', mode: 'client', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
