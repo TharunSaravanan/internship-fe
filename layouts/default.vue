@@ -45,7 +45,7 @@
                   >About Us</span
                 >
               </b-nav-item>
-              <b-nav-item @click="navigateTo('/contact-us')">
+              <!--<b-nav-item @click="navigateTo('/contact-us')">
                 <span
                   :class="[
                     isLinkActive('/contact-us')
@@ -54,7 +54,7 @@
                   ]"
                   >Contact Us</span
                 >
-              </b-nav-item>
+              </b-nav-item>-->
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>

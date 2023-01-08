@@ -36,12 +36,12 @@
           computer science, math, and physics.
         </p>
         <div class="d-flex justify-content-center mt-4">
-          <b-button class="icon icon__facebook"
+         <!--<b-button class="icon icon__facebook"
             ><font-awesome-icon icon="fab fa-facebook-f" />
           </b-button>
           <b-button class="icon icon__twitter"
             ><font-awesome-icon icon="fab fa-twitter" />
-          </b-button>
+          </b-button>--> 
           <b-button class="icon icon__linkedin" @click="navigateToLinkedIn()"
             ><font-awesome-icon icon="fab fa-linkedin" />
           </b-button>
