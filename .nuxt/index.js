@@ -17,6 +17,7 @@ import nuxt_plugin_bootstrapvue_d791483a from 'nuxt_plugin_bootstrapvue_d791483a
 import nuxt_plugin_axios_088171b4 from 'nuxt_plugin_axios_088171b4' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_bbffa414 from 'nuxt_plugin_fontawesome_bbffa414' // Source: .\\fontawesome.js (mode: 'all')
 import nuxt_plugin_setup_48aa5906 from 'nuxt_plugin_setup_48aa5906' // Source: ..\\plugins\\setup.ts (mode: 'client')
+import nuxt_plugin_firebase_34d6f690 from 'nuxt_plugin_firebase_34d6f690' // Source: ..\\plugins\\firebase.ts (mode: 'client')
 import nuxt_plugin_axiosaccessor_557363f9 from 'nuxt_plugin_axiosaccessor_557363f9' // Source: ..\\plugins\\axios-accessor.ts (mode: 'client')
 import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: ..\\plugins\\axios.ts (mode: 'client')
 
@@ -200,6 +201,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_setup_48aa5906 === 'function') {
     await nuxt_plugin_setup_48aa5906(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_firebase_34d6f690 === 'function') {
+    await nuxt_plugin_firebase_34d6f690(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_axiosaccessor_557363f9 === 'function') {
