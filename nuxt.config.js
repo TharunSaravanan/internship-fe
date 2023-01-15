@@ -14,7 +14,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'description', content: 'High School Internship, High School Internships, College internship, College internships, internship, internships, Summer internship, Summer internships, paid internship, paid internships' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '../favicon.ico' }],
@@ -25,9 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '~/plugins/setup.ts', ssr: false },
-  { src: '~/plugins/firebase.ts', mode: 'client', ssr: false },
   { src: '~/plugins/axios-accessor.ts', mode: 'client' },
-  { src: '~/plugins/axios.ts', mode: 'client', ssr: false }],
+  { src: '~/plugins/axios.ts', mode: 'client', ssr: false },],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,6 +52,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/firebase',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -69,4 +69,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyAp05Mff-n9HgQd8gpp7ndx2hEPEd_8C_4',
+      authDomain: 'student-internships.firebaseapp.com',
+      projectId: 'student-internships',
+      storageBucket: 'student-internships.appspot.com',
+      messagingSenderId: '73277938963',
+      appId: '1:73277938963:web:73b13c5ca0b18bf97b4ee6',
+      measurementId: 'G-J3FVKQWG8P'
+    },
+    services: {
+      analytics: true
+    }
+  },
 }

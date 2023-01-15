@@ -14,10 +14,10 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 import nuxt_plugin_plugin_6c6d2c11 from 'nuxt_plugin_plugin_6c6d2c11' // Source: .\\components\\plugin.js (mode: 'all')
 import nuxt_plugin_bootstrapvue_d791483a from 'nuxt_plugin_bootstrapvue_d791483a' // Source: .\\bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_index_8bf418f2 from 'nuxt_plugin_index_8bf418f2' // Source: .\\firebase\\index.js (mode: 'all')
 import nuxt_plugin_axios_088171b4 from 'nuxt_plugin_axios_088171b4' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_bbffa414 from 'nuxt_plugin_fontawesome_bbffa414' // Source: .\\fontawesome.js (mode: 'all')
 import nuxt_plugin_setup_48aa5906 from 'nuxt_plugin_setup_48aa5906' // Source: ..\\plugins\\setup.ts (mode: 'client')
-import nuxt_plugin_firebase_34d6f690 from 'nuxt_plugin_firebase_34d6f690' // Source: ..\\plugins\\firebase.ts (mode: 'client')
 import nuxt_plugin_axiosaccessor_557363f9 from 'nuxt_plugin_axiosaccessor_557363f9' // Source: ..\\plugins\\axios-accessor.ts (mode: 'client')
 import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: ..\\plugins\\axios.ts (mode: 'client')
 
@@ -69,7 +69,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Student Internships","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"..\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"Student Internships","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"High School Internship, High School Internships, College internship, College internships, internship, internships, Summer internship, Summer internships, paid internship, paid internships"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"..\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     router,
     nuxt: {
@@ -191,6 +191,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_bootstrapvue_d791483a(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_index_8bf418f2 === 'function') {
+    await nuxt_plugin_index_8bf418f2(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_088171b4 === 'function') {
     await nuxt_plugin_axios_088171b4(app.context, inject)
   }
@@ -201,10 +205,6 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_setup_48aa5906 === 'function') {
     await nuxt_plugin_setup_48aa5906(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_firebase_34d6f690 === 'function') {
-    await nuxt_plugin_firebase_34d6f690(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_axiosaccessor_557363f9 === 'function') {
